@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.16)
+project(cm3588-cec-remote LANGUAGES CXX)
+add_executable(cm3588-cec-remote src/cm3588-cec-remote.cpp)
+target_compile_features(cm3588-cec-remote PRIVATE cxx_std_20)
+target_compile_options(cm3588-cec-remote PRIVATE -O2 -Wall -Wextra -Wpedantic)
+target_link_libraries(cm3588-cec-remote PRIVATE pthread)
+install(TARGETS cm3588-cec-remote RUNTIME DESTINATION bin)

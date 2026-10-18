@@ -1,0 +1,17 @@
+[Unit]
+Description=CM3588 HDMI-CEC remote to WayDroid keyboard bridge
+After=systemd-udevd.service systemd-modules-load.service
+ConditionPathExists=/dev/cec0
+ConditionPathExists=/dev/uinput
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/cm3588-cec-remote
+Restart=on-failure
+RestartSec=3
+StandardOutput=journal
+StandardError=journal
+NoNewPrivileges=yes
+
+[Install]
+WantedBy=multi-user.target

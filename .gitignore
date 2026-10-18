@@ -1,0 +1,7 @@
+/build/
+*.o
+*.deb
+*.zip
+*.tar.gz
+*.log
+cm3588-cec-remote
